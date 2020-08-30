@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="esome.SubPage.MeterView">
+    <ContentView.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Meter Parameters" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <FlexLayout Wrap="Wrap" JustifyContent="SpaceAround">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="U" VerticalOptions="Center"/>
+                        <Entry Text="220" WidthRequest="60" x:Name="txt_U" Keyboard="Numeric"/>
+                        <Label Text="V" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="I" VerticalOptions="Center"/>
+                        <Entry Text="100" WidthRequest="60" x:Name="txt_I" Keyboard="Numeric"/>
+                        <Label Text="A" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="C" VerticalOptions="Center"/>
+                        <Entry Text="1000" WidthRequest="80" x:Name="txt_C" Keyboard="Numeric"/>
+                        <Label Text="imp/kWh" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="PF" VerticalOptions="Center"/>
+                        <Picker ItemsSource="{StaticResource Direction}" SelectedIndex="0" x:Name="cmb_FR"/>
+                        <Entry Text="1.0" WidthRequest="55" x:Name="txt_PF" Keyboard="Numeric"/>
+                        <Picker ItemsSource="{x:StaticResource Key=PFQuality}" SelectedIndex="0" x:Name="cmb_LC"/>
+                    </StackLayout>
+                    <Picker ItemsSource="{x:StaticResource Key=TestMode}" SelectedIndex="0" x:Name="cmb_TestMode"/>
+                    <Picker ItemsSource="{StaticResource PowerType}" SelectedIndex="0" x:Name="cmb_PQ"/>
+                    <Picker ItemsSource="{StaticResource Component}" SelectedIndex="0" x:Name="cmb_HABC" IsEnabled="False"/>
+                    <Picker ItemsSource="{StaticResource Clockwise}" SelectedIndex="0" x:Name="cmb_clockwise"/>
+                </FlexLayout>
+                <Button Text="Calc" Clicked="MeterCalc_Click"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="P" VerticalOptions="Center"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_P"/>
+                            <Label Text="Wh" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Q" VerticalOptions="Center"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_Q"/>
+                            <Label Text="var" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="S" VerticalOptions="Center"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_S"/>
+                            <Label Text="VA" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="∠" VerticalOptions="Center"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_A"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiU1" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiU1"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiU2" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiU2"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiU3" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiU3"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Column="1">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Pulse" VerticalOptions="Center" HorizontalOptions="Start" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_CHz"/>
+                            <Label Text="Hz" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Pulse" VerticalOptions="Center" HorizontalOptions="Start" LineBreakMode="WordWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_OnePulseTime"/>
+                            <Label Text="s/imp" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Energy" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_TimePerkWh"/>
+                            <Label Text="s/kWh" VerticalOptions="Center" HorizontalOptions="End"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Energy" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_MinPerkWh"/>
+                            <Label Text="min/kWh" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiI1" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiI1"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiI2" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiI2"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiI3" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiI3"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+                <Image x:Name="pic_phase"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

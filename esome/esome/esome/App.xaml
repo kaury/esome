@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="esome.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <x:Array x:Key="TestMode" Type="{x:Type x:String}">
+                        <x:String>1P2W</x:String>
+                        <x:String>3P3W</x:String>
+                        <x:String>3P4W</x:String>
+                    </x:Array>
+                    <x:Array x:Key="PFQuality" Type="{x:Type x:String}">
+                        <x:String>Inductive</x:String>
+                        <x:String>Capacitive</x:String>
+                    </x:Array>
+                    <x:Array x:Key="Component" Type="{x:Type x:String}">
+                        <x:String>H</x:String>
+                        <x:String>A</x:String>
+                        <x:String>B</x:String>
+                        <x:String>C</x:String>
+                    </x:Array>
+                    <x:Array x:Key="Clockwise" Type="{x:Type x:String}">
+                        <x:String>Clockwise</x:String>
+                        <x:String>Anticlockwise</x:String>
+                    </x:Array>
+                    <x:Array x:Key="PowerType" Type="{x:Type x:String}">
+                        <x:String>Active</x:String>
+                        <x:String>Reactive</x:String>
+                    </x:Array>
+                    <x:Array x:Key="Direction" Type="{x:Type x:String}">
+                        <x:String>+</x:String>
+                        <x:String>-</x:String>
+                    </x:Array>
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

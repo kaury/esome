@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="esome.SubPage.PhaseSequenceView">
+    <ContentView.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Phase Sequence" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <FlexLayout Wrap="Wrap" JustifyContent="SpaceAround">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Ua" VerticalOptions="Center"/>
+                            <Entry Text="220" WidthRequest="60" x:Name="txt_Ua" Keyboard="Numeric" />
+                            <Label Text="V" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Ub" VerticalOptions="Center"/>
+                            <Entry Text="220" WidthRequest="60" x:Name="txt_Ub" Keyboard="Numeric" />
+                            <Label Text="V" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Uc" VerticalOptions="Center"/>
+                            <Entry Text="220" WidthRequest="60" x:Name="txt_Uc" Keyboard="Numeric" />
+                            <Label Text="V" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Ia" VerticalOptions="Center"/>
+                            <Entry Text="5" WidthRequest="60" x:Name="txt_Ia" Keyboard="Numeric"/>
+                            <Label Text="A" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Ib" VerticalOptions="Center"/>
+                            <Entry Text="5" WidthRequest="60" x:Name="txt_Ib" Keyboard="Numeric"/>
+                            <Label Text="A" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Ic" VerticalOptions="Center"/>
+                            <Entry Text="5" WidthRequest="60" x:Name="txt_Ic" Keyboard="Numeric"/>
+                            <Label Text="A" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiU1" VerticalOptions="Center"/>
+                            <Entry Text="0" WidthRequest="60" x:Name="txt_UaPhi" Keyboard="Numeric"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiU2" VerticalOptions="Center"/>
+                            <Entry Text="240" WidthRequest="60" x:Name="txt_UbPhi" Keyboard="Numeric"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiU3" VerticalOptions="Center"/>
+                            <Entry Text="120" WidthRequest="60" x:Name="txt_UcPhi" Keyboard="Numeric"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiI1" VerticalOptions="Center"/>
+                            <Entry Text="0" WidthRequest="60" x:Name="txt_IaPhi" Keyboard="Numeric"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiI2" VerticalOptions="Center"/>
+                            <Entry Text="240" WidthRequest="60" x:Name="txt_IbPhi" Keyboard="Numeric"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiI3" VerticalOptions="Center"/>
+                            <Entry Text="120" WidthRequest="60" x:Name="txt_IcPhi" Keyboard="Numeric"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </FlexLayout>
+                
+                <Button Text="Calc" Clicked="PSCalc_Click"/>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="U Positive" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_UPositive"/>
+                            <Label Text="V" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="U Negative" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_UNegative"/>
+                            <Label Text="V" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="U Zero" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_UZero"/>
+                            <Label Text="V" VerticalOptions="Center"/>
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="I Positive" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_IPositive"/>
+                            <Label Text="A" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="I Negative" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_INegative"/>
+                            <Label Text="A" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="I Zero" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_IZero"/>
+                            <Label Text="A" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    
+                    <StackLayout Grid.Column="1">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiUP" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiUPositive"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiUN" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiUNegative"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiUZ" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiUZero"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiIP" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiIPositive"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiIN" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiINegative"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="PhiIZ" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiIZero"/>
+                            <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

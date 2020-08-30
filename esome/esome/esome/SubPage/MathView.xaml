@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="esome.SubPage.MathView">
+    <ContentView.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Single" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="HEX" VerticalOptions="Center"/>
+                    <Entry x:Name="txtHexOrg" Text="0000C842" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="=>" Clicked="CvtHex2Dec_Click"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DEC" VerticalOptions="Center"/>
+                    <Entry x:Name="txtDecRst" Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DEC" VerticalOptions="Center"/>
+                    <Entry x:Name="txtDecOrg" Text="100.0" HorizontalOptions="FillAndExpand" Keyboard="Numeric"/>
+                    <Button Text="=>" Clicked="CvtDec2Hex_Click"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="HEX" VerticalOptions="Center"/>
+                    <Entry x:Name="txtHexRst" Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                
+                <Label Text="Double" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="HEX" VerticalOptions="Center"/>
+                    <Entry x:Name="txtHexOrg2" Text="0000000000005940" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="=>" Clicked="CvtHex2Dec2_Click"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DEC" VerticalOptions="Center"/>
+                    <Entry x:Name="txtDecRst2" Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DEC" VerticalOptions="Center"/>
+                    <Entry x:Name="txtDecOrg2" Text="100.0" HorizontalOptions="FillAndExpand" Keyboard="Numeric"/>
+                    <Button Text="=>" Clicked="CvtDec2Hex2_Click"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="HEX" VerticalOptions="Center"/>
+                    <Entry x:Name="txtHexRst2" Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                
+                <Label Text="Integer" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="HEX" VerticalOptions="Center"/>
+                    <Entry x:Name="txtHexOrg3" Text="0000000000000064" HorizontalOptions="FillAndExpand"/>
+                    <Button Text="=>" Clicked="CvtHex2Dec3_Click"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DEC" VerticalOptions="Center"/>
+                    <Entry x:Name="txtDecRst3" Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="DEC" VerticalOptions="Center"/>
+                    <Entry x:Name="txtDecOrg3" Text="100" HorizontalOptions="FillAndExpand" Keyboard="Numeric"/>
+                    <Button Text="=>" Clicked="CvtDec2Hex3_Click"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="HEX" VerticalOptions="Center"/>
+                    <Entry x:Name="txtHexRst3" Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentView.Content>
+</ContentView>

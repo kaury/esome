@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="esome.MainPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <ContentView x:Name="controls" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"></ContentView>
+        
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Math" Clicked="Math_Clicked"/>
+            <Button Text="Meter" Clicked="Meter_Clicked"/>
+            <Button Text="Bluetooth" Clicked="Bluetooth_Clicked"/>
+            <Button Text="PS" Clicked="PhaseSequence_Clicked"/>
+        </StackLayout>
+        <!--<Button Text="Click Me" Clicked="Handle_Clicked" />-->
+    </StackLayout>
+
+</ContentPage>

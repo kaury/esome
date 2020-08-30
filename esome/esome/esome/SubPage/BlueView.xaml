@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="esome.SubPage.BlueView">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Init" x:Name="Btn_Init" Clicked="Btn_Init_Clicked"/>
+                <Button Text="Listen" x:Name="Btn_Listen" Clicked="Btn_Listen_Clicked"/>
+            </StackLayout>
+            <Editor x:Name="txtmsg" Grid.Row="1" IsReadOnly="True"/>
+            <Editor x:Name="txtCmd" Grid.Row="2" Completed="TxtCmd_Completed"/>
+        </Grid>
+    </ContentView.Content>
+</ContentView>

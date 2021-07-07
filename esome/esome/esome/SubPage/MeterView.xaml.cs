@@ -95,6 +95,12 @@ namespace esome.SubPage
             }
             //if (vector.DrawVector()) pic_phase.Source = PicHelper.GetBitmap(vector.VectorFullPath);
             //else pic_phase.Source = null;
+            double.TryParse(txt_Co.Text, out double C0);
+            double.TryParse(txt_N.Text, out double N);
+            double T0 = N * CTime;
+            double m0 = C0 / C * N;
+            txt_m0.Text = m0.ToString();
+            txt_T0.Text = T0.ToString();
         }
     }
 }

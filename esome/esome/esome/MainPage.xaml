@@ -13,7 +13,7 @@
         <StackLayout Orientation="Horizontal">
             <Button Text="Math" Clicked="Math_Clicked"/>
             <Button Text="Meter" Clicked="Meter_Clicked"/>
-            <Button Text="Bluetooth" Clicked="Bluetooth_Clicked"/>
+            <!--<Button Text="Bluetooth" Clicked="Bluetooth_Clicked"/>-->
             <Button Text="PS" Clicked="PhaseSequence_Clicked"/>
         </StackLayout>
         <!--<Button Text="Click Me" Clicked="Handle_Clicked" />-->

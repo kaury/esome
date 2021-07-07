@@ -35,6 +35,16 @@
                     <Picker ItemsSource="{StaticResource PowerType}" SelectedIndex="0" x:Name="cmb_PQ"/>
                     <Picker ItemsSource="{StaticResource Component}" SelectedIndex="0" x:Name="cmb_HABC" IsEnabled="False"/>
                     <Picker ItemsSource="{StaticResource Clockwise}" SelectedIndex="0" x:Name="cmb_clockwise"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="C0" VerticalOptions="Center"/>
+                        <Entry Text="2500000" WidthRequest="120" x:Name="txt_Co" Keyboard="Numeric"/>
+                        <Label Text="imp/kWh" VerticalOptions="Center"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="N" VerticalOptions="Center"/>
+                        <Entry Text="1" WidthRequest="55" x:Name="txt_N" Keyboard="Numeric"/>
+                        <Label Text="imp" VerticalOptions="Center"/>
+                    </StackLayout>
                 </FlexLayout>
                 <Button Text="Calc" Clicked="MeterCalc_Click"/>
                 <Grid>
@@ -78,6 +88,11 @@
                             <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiU3"/>
                             <Label Text="°" VerticalOptions="Center"/>
                         </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="m0" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_m0"/>
+                            <Label Text="imp" VerticalOptions="Center"/>
+                        </StackLayout>
                     </StackLayout>
                     <StackLayout Grid.Column="1">
                         <StackLayout Orientation="Horizontal">
@@ -114,6 +129,11 @@
                             <Label Text="PhiI3" VerticalOptions="Center" LineBreakMode="NoWrap"/>
                             <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_PhiI3"/>
                             <Label Text="°" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="T0" VerticalOptions="Center" LineBreakMode="NoWrap"/>
+                            <Entry Text="" IsEnabled="False" IsReadOnly="True" HorizontalOptions="FillAndExpand" x:Name="txt_T0"/>
+                            <Label Text="s" VerticalOptions="Center"/>
                         </StackLayout>
                     </StackLayout>
                 </Grid>
